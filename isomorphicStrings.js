@@ -17,3 +17,4 @@ function  isomorphicStrings(s, t) {
 
 console.log(isomorphicStrings('add', 'egg'));
 console.log(isomorphicStrings('f11', 'b23'));
+console.log(isomorphicStrings('234', '333'));
