@@ -1,19 +1,13 @@
-function  isomorphicStrings(s, t) {
-    if (s.length !== t.length) return false;
+function containsDuplicate(nums) {
+    let set = new Set();
 
-    let map = new Map();
-    let pam = new Map();
-
-    for (let i = 0; i < s.length; i++) {
-        if (map.has(s[i]) && map.get(s[i]) !== t[i]) return false;
-        if (pam.has(t[i]) && pam.get(t[i]) !== s[i]) return false;
-        
-        map.set(s[i], t[i]);
-        pam.set(t[i], s[i]);
+    for (let num of nums) {
+        if (set.has(num)) return true;
+        set.add(num);
     }
 
-    return true;
+    return false;
 }
 
-console.log(isomorphicStrings('add', 'egg'));
-console.log(isomorphicStrings('f11', 'b23'));
+console.log(containsDuplicate([1,2,3,4]));
+console.log(containsDuplicate([1,2,3,1]));
